@@ -1,0 +1,10 @@
+1. Команды для 1го задания
+cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+mysql
+SOURCE C:\Users\Dara\lesson2.sql;
+quit;
+mysqldump example > "/Users/Dara/example.sql"
+mysql sample < "/Users/Dara/example.sql"
+
+2. Команда для 2го задания
+mysqldump mysql --where="true limit 100" help_keyword > "/Users/Dara/mysql.sql" 
