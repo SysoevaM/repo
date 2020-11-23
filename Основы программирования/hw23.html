@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	var answer = parseInt(Math.random() * 100);
+	alert("Добро пожаловать в игру \"Угадайка\"!\n Вам необходимо угадать число от 0 до 100. Количество попыток не ограничено.\n Поехали!");
+
+	var attempt = 1; // счетчик попыток
+	var userAnswer; // ответ игрока
+	// игроки угадывают до тех пор, пока не надоест
+	do { 
+		// для каждого из 2х игроков проверяем ответ
+		for (var numGamer = 1; numGamer < 3; numGamer++) { 
+			userAnswer = prompt("Игрок " + numGamer + ", угадайте число от 0 до 100. \n Для выхода из игры наберите команду \'exit\'.\n Попытка № " + attempt);
+			//игрок решил выйти из игры
+			if (userAnswer == "exit") { 
+				alert("Было загадано число: " + answer);
+				break;
+			}
+			else if (parseInt(userAnswer) > answer) {
+				alert("Ваш ответ слишком большой.");
+			}
+			else if (parseInt(userAnswer) < answer) {
+				alert("Ваш ответ слишком маленький.");
+			}
+			else if (parseInt(userAnswer) == answer) {
+				alert("Вы угадали!");
+				userAnswer = "exit" // один из игроков угадал, поэтому навыход
+				break;
+			}
+			else {
+				alert("Необходимо ввести число или команду \'exit\'.");
+			}
+		}
+		attempt++;
+	}
+	while (userAnswer != "exit");
+	</script>

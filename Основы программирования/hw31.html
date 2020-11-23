@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	// создание массива
+	function arrays(len) {
+
+		let arr = new Array();
+		for(var i = 0; i < len; i++) {
+			arr[i] = i + 1;
+		}
+		return arr;
+	}
+
+	// подсчет сумм элементов
+	function sumArray(arr) {
+		
+		var sum = 0;
+		for(var i = 0; i < arr.length; i++) {
+			sum = sum + arr[i];
+		}
+		return sum;
+	}
+
+	// поиск максимального числа
+	function maxElement(arr) {
+
+		var max = arr[0];
+		for (var i = arr.length - 1; i >= 0; i--) {
+			if (max < arr[i]) 
+				max = arr[i]; 
+		}
+		return max;
+	}
+
+	// поиск минимального числа
+	function minElement(arr) {
+		
+		var min = arr[0];
+		for (var i = arr.length - 1; i >= 0; i--) {
+			if (min > arr[i]) 
+				min = arr[i]; 
+		}
+		return min;
+	}
+
+	// возвращаем только четные значения
+	function evenNumber(arr) {
+		
+		let wArr = new Array();
+		var j = 0;
+
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 == 0) {
+				wArr[j] = arr[i];
+				j++;
+			}
+		}
+		return wArr;
+	}
+	
+	// отпределяем длинну массива
+	var n = +prompt("Введите длинну массива");
+
+    while(n <= 0) {
+		alert("Число не корректно. Значение должно быть больше 0.");
+		n = +prompt("Введите длинну массива");
+	}
+
+	var workArray = arrays (n); // рабочий массив
+	var workSumArray = sumArray (workArray); // сумма всех чисел в массиве
+	var workMax = maxElement(workArray); // максимальное число в массиве
+	var workMin = minElement(workArray); // минимальное число в массиве
+	var workEventNum = evenNumber(workArray); // все четные числа в массиве
+
+	// выводим результат
+	document.write("Массив: " + workArray + " <br>");
+	document.write("Сумма всех чисел в массиве: " + workSumArray + " <br>");
+	document.write("Максимальный элемент равен: " + workMax + " <br>");
+	document.write("Максимальный элемент равен: " + workMin + " <br>");
+	document.write("Четные числа массива: " + workEventNum + " <br>");
+
+</script>

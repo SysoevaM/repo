@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var count = 0; // счетчик правильных ответов
+	var textPosit = "Поздравляем, Вы угадали!";
+	var textNeg = "Вы не угадали! Правильный ответ: ";
+
+	alert("Приветствуем в игре \"Загадки\"!\n Вам необходимо отгадать 4 загадки. На каждую загадку предоставляется одна попытка ответа.\n Начинаем!");
+
+	// первая загадка
+	var userAnswer = prompt("Загадка первая:\n\n Не снег,\n A белое вегда.\n Хоть и течет,\n Но не вода.\n");
+	userAnswer = userAnswer.toLowerCase(); // приводим все к нижнему регистру
+	// проверяем ответ
+	if (userAnswer == "молоко" || userAnswer == "сливки") {
+		alert(textPosit);
+		count++;
+	}
+	else {
+		alert(textNeg + "молоко.");
+	}
+
+	//вторая загадка
+	userAnswer = prompt("Загадка вторая:\n\n Всех лохматых расчесать,\n Кудри в косы заплетать,\n Делать модную прическу\n Помогает нам … .");
+	userAnswer = userAnswer.toLowerCase();
+	if (userAnswer == "расческа" || userAnswer == "щетка" || userAnswer == "щётка") {
+		alert(textPosit);
+		count++;
+	}
+	else {
+		alert(textNeg + "расческа.");
+	}
+
+	//третья загадка
+	userAnswer = prompt("Загадка третья:\n\n Ягодку сорвать легко —\n Ведь растет невысоко.\n Под листочки загляни-ка —\n Там созрела … .");
+	userAnswer = userAnswer.toLowerCase();
+	if (userAnswer == "земляника" || userAnswer == "клубника") {
+		alert(textPosit);
+		count++;
+	}
+	else {
+		alert(textNeg + "земляника.");
+	}
+
+	//четвертая загадка
+	userAnswer = prompt("Загадка четвертая:\n\n Всех кормлю с охотой я,\n A сама безротая.");
+	userAnswer = userAnswer.toLowerCase();
+	if (userAnswer == "ложка" || userAnswer == "ложечка") {
+		alert(textPosit);
+		count++;
+	}
+	else {
+		alert(textNeg + "ложка.");
+	}
+
+	// выводи зезультат игры
+	alert("Игра окончена. Угадано загадок " + count + " из 4.");
+
+</script>
